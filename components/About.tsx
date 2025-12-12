@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { ABOUT } from '@/lib/constants'
 
 export default function About() {
@@ -33,11 +34,16 @@ export default function About() {
           <div className={`relative transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
           }`}>
-            {/* Placeholder Image with Stats Overlay */}
+            {/* Image with Stats Overlay */}
             <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg md:rounded-xl overflow-hidden border border-white/10">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-sm">
-                Professional Plumbing Image
-              </div>
+              <Image
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop"
+                alt="Professional plumber at work"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
               
               {/* Stats Overlay */}
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent p-3 md:p-4">
