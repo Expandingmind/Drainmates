@@ -36,16 +36,16 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-6 md:py-8">
-        <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-          <svg className="w-6 h-6 md:w-8 md:h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-12 h-12 md:w-16 md:h-16 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+          <svg className="w-6 h-6 md:w-8 md:h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-lg md:text-xl font-bold text-black mb-1 md:mb-2">Request Received!</h3>
-        <p className="text-gray-600 text-sm md:text-base mb-3 md:mb-4">We&apos;ll get back to you within 24 hours.</p>
+        <h3 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-2">Request Received!</h3>
+        <p className="text-gray-400 text-sm md:text-base mb-3 md:mb-4">We&apos;ll get back to you within 24 hours.</p>
         <button 
           onClick={() => setSubmitted(false)}
-          className="text-primary-600 font-semibold hover:underline text-sm"
+          className="text-primary-500 font-semibold hover:underline text-sm"
         >
           Submit another request
         </button>
@@ -54,7 +54,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div id="contact-form" className="py-8 md:py-10 bg-white">
+    <div id="contact-form" className="py-8 md:py-10 bg-black border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
           {/* Form Side */}
@@ -62,17 +62,17 @@ export default function ContactForm() {
             <p className="text-gray-500 uppercase tracking-[0.12em] text-[10px] md:text-xs font-medium mb-2">
               Get In Touch
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3 md:mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4">
               Request a Free Estimate
             </h2>
-            <p className="text-gray-600 text-sm md:text-base mb-4 md:mb-6">
+            <p className="text-gray-400 text-sm md:text-base mb-4 md:mb-6">
               Fill out the form and we&apos;ll get back to you within 24 hours.
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-xs md:text-sm font-medium text-gray-300 mb-1">
                     Name *
                   </label>
                   <input
@@ -82,12 +82,12 @@ export default function ContactForm() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                    className="w-full px-3 py-2 md:py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="phone" className="block text-xs md:text-sm font-medium text-gray-300 mb-1">
                     Phone *
                   </label>
                   <input
@@ -97,14 +97,14 @@ export default function ContactForm() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                    className="w-full px-3 py-2 md:py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                     placeholder="(555) 123-4567"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-xs md:text-sm font-medium text-gray-300 mb-1">
                   Email *
                 </label>
                 <input
@@ -114,13 +114,13 @@ export default function ContactForm() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                  className="w-full px-3 py-2 md:py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                   placeholder="you@email.com"
                 />
               </div>
               
               <div>
-                <label htmlFor="service" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="service" className="block text-xs md:text-sm font-medium text-gray-300 mb-1">
                   Service Needed *
                 </label>
                 <select
@@ -129,11 +129,11 @@ export default function ContactForm() {
                   required
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-white"
+                  className="w-full px-3 py-2 md:py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
                 >
-                  <option value="">Select a service</option>
+                  <option value="" className="bg-gray-900">Select a service</option>
                   {SERVICES.map((service) => (
-                    <option key={service.id} value={service.id}>
+                    <option key={service.id} value={service.id} className="bg-gray-900">
                       {service.title}
                     </option>
                   ))}
@@ -141,7 +141,7 @@ export default function ContactForm() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-xs md:text-sm font-medium text-gray-300 mb-1">
                   Message
                 </label>
                 <textarea
@@ -150,7 +150,7 @@ export default function ContactForm() {
                   rows={3}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all resize-none"
+                  className="w-full px-3 py-2 md:py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all resize-none"
                   placeholder="Tell us about your plumbing issue..."
                 />
               </div>
@@ -181,7 +181,7 @@ export default function ContactForm() {
           </div>
           
           {/* Contact Info Side */}
-          <div className="bg-black rounded-xl md:rounded-2xl p-5 md:p-8 text-white">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl md:rounded-2xl p-5 md:p-8 text-white border border-white/10">
             <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Contact Information</h3>
             
             <div className="space-y-4 md:space-y-6">

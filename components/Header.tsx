@@ -39,8 +39,8 @@ export default function Header() {
       {/* Main Header */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm' 
-          : 'bg-white'
+          ? 'bg-black/95 backdrop-blur-md shadow-sm border-b border-white/10' 
+          : 'bg-black'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 md:h-16">
@@ -49,7 +49,7 @@ export default function Header() {
               <div className="w-7 h-7 md:w-8 md:h-8 bg-primary-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-white font-bold text-xs md:text-sm">D</span>
               </div>
-              <span className="text-black font-bold text-base md:text-lg tracking-tight">
+              <span className="text-white font-bold text-base md:text-lg tracking-tight">
                 DRAINMATES
               </span>
             </Link>
@@ -60,7 +60,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium text-sm transition-colors relative group"
+                  className="text-gray-300 hover:text-primary-500 font-medium text-sm transition-colors relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></span>
@@ -72,7 +72,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
-                className="inline-flex items-center gap-2 text-gray-700 hover:text-primary-600 font-medium text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-gray-300 hover:text-primary-500 font-medium text-sm transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -90,7 +90,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 -mr-2 text-gray-700"
+              className="lg:hidden p-2 -mr-2 text-white"
               aria-label="Toggle menu"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -105,7 +105,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden fixed inset-x-0 top-[86px] bottom-0 bg-white z-40 transition-all duration-300 ${
+        <div className={`lg:hidden fixed inset-x-0 top-[86px] bottom-0 bg-black z-40 transition-all duration-300 ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}>
           <nav className="flex flex-col p-4 space-y-1">
@@ -114,7 +114,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-gray-900 hover:text-primary-600 hover:bg-gray-50 font-semibold text-lg py-3 px-4 rounded-lg transition-all ${
+                className={`text-white hover:text-primary-500 hover:bg-white/5 font-semibold text-lg py-3 px-4 rounded-lg transition-all ${
                   isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
                 }`}
                 style={{ transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms' }}
@@ -123,10 +123,10 @@ export default function Header() {
               </Link>
             ))}
             
-            <div className="pt-3 mt-3 border-t border-gray-100 space-y-2.5">
+            <div className="pt-3 mt-3 border-t border-white/10 space-y-2.5">
               <a
                 href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
-                className="flex items-center justify-center gap-2 bg-gray-100 text-gray-900 px-4 py-2.5 rounded-full font-semibold text-base"
+                className="flex items-center justify-center gap-2 bg-white/10 text-white px-4 py-2.5 rounded-full font-semibold text-base"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

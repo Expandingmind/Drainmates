@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-black">
       {/* Hero */}
-      <section className="bg-black text-white py-12 md:py-16">
+      <section className="bg-black text-white py-12 md:py-16 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400 uppercase tracking-[0.12em] text-[10px] md:text-xs font-medium mb-2">
             Get In Touch
@@ -28,16 +28,16 @@ export default function ContactPage() {
       <ContactForm />
 
       {/* FAQ */}
-      <section className="py-10 md:py-14 bg-gray-50">
+      <section className="py-10 md:py-14 bg-black border-t border-white/5">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 md:mb-8">
             <p className="text-gray-500 uppercase tracking-[0.12em] text-[10px] md:text-xs font-medium mb-2">
               Got Questions?
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-600 text-sm md:text-base">
+            <p className="text-gray-400 text-sm md:text-base">
               Find answers to common questions about our services.
             </p>
           </div>

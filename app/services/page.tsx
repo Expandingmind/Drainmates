@@ -62,9 +62,9 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-black">
       {/* Hero */}
-      <section className="bg-black text-white py-12 md:py-16">
+      <section className="bg-black text-white py-12 md:py-16 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400 uppercase tracking-[0.12em] text-[10px] md:text-xs font-medium mb-2">
             What We Do
@@ -79,29 +79,29 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-10 md:py-14 bg-white">
+      <section className="py-10 md:py-14 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {SERVICES.map((service) => (
               <div 
                 key={service.id}
                 id={service.id}
-                className="group bg-gray-50 rounded-xl md:rounded-2xl p-5 md:p-6 border border-gray-100 hover:border-primary-500/30 hover:shadow-lg transition-all duration-300"
+                className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl md:rounded-2xl p-5 md:p-6 border border-white/10 hover:border-primary-500/30 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-black flex items-center justify-center text-white flex-shrink-0 group-hover:bg-primary-600 transition-colors">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white/10 flex items-center justify-center text-white flex-shrink-0 group-hover:bg-primary-600 transition-colors">
                     {iconMap[service.icon] || iconMap.drain}
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-base md:text-lg font-bold text-black mb-1.5 group-hover:text-primary-600 transition-colors">
+                    <h2 className="text-base md:text-lg font-bold text-white mb-1.5 group-hover:text-primary-400 transition-colors">
                       {service.title}
                     </h2>
-                    <p className="text-gray-600 text-xs md:text-sm mb-3">
+                    <p className="text-gray-400 text-xs md:text-sm mb-3">
                       {service.shortDesc}
                     </p>
                     <ul className="space-y-1.5">
                       {service.details.map((detail, index) => (
-                        <li key={index} className="flex items-start gap-2 text-xs md:text-sm text-gray-600">
+                        <li key={index} className="flex items-start gap-2 text-xs md:text-sm text-gray-300">
                           <svg className="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>

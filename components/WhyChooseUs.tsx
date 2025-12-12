@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-10 md:py-14 bg-gray-50 overflow-hidden">
+    <section ref={sectionRef} className="py-10 md:py-14 bg-black overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className={`text-center mb-6 md:mb-8 transition-all duration-700 ${
@@ -68,10 +68,10 @@ export default function WhyChooseUs() {
           <p className="text-gray-500 uppercase tracking-[0.12em] text-[10px] md:text-xs font-medium mb-2">
             Why Drainmates
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
             The Drainmates Difference
           </h2>
-          <p className="text-gray-600 text-sm md:text-base max-w-lg mx-auto">
+          <p className="text-gray-400 text-sm md:text-base max-w-lg mx-auto">
             We&apos;re professionals who take pride in every job.
           </p>
         </div>
@@ -81,21 +81,21 @@ export default function WhyChooseUs() {
           {WHY_CHOOSE_US.map((item, index) => (
             <div 
               key={index} 
-              className={`group bg-white rounded-lg md:rounded-xl p-4 md:p-5 shadow-sm hover:shadow-md border border-gray-100 hover:border-primary-500/30 transition-all duration-500 card-hover ${
+              className={`group bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg md:rounded-xl p-4 md:p-5 border border-white/10 hover:border-primary-500/30 transition-all duration-500 card-hover ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: isVisible ? `${index * 50}ms` : '0ms' }}
             >
               {/* Icon */}
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-black flex items-center justify-center text-white mb-2 md:mb-3 group-hover:bg-primary-600 group-hover:scale-110 transition-all duration-300">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 flex items-center justify-center text-white mb-2 md:mb-3 group-hover:bg-primary-600 group-hover:scale-110 transition-all duration-300">
                 {iconMap[item.icon] || iconMap.check}
               </div>
               
               {/* Content */}
-              <h3 className="text-xs md:text-sm font-bold text-black mb-1 group-hover:text-primary-600 transition-colors">
+              <h3 className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-primary-400 transition-colors">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-[10px] md:text-xs leading-relaxed line-clamp-2">
+              <p className="text-gray-400 text-[10px] md:text-xs leading-relaxed line-clamp-2">
                 {item.description}
               </p>
             </div>

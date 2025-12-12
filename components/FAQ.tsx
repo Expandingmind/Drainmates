@@ -11,15 +11,15 @@ export default function FAQ() {
       {FAQ_ITEMS.map((item, index) => (
         <div 
           key={index} 
-          className="bg-white rounded-lg md:rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+          className="bg-white/5 rounded-lg md:rounded-xl border border-white/10 overflow-hidden"
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="w-full px-4 py-3 md:py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+            className="w-full px-4 py-3 md:py-4 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
           >
-            <span className="text-sm md:text-base font-semibold text-black pr-4">{item.question}</span>
+            <span className="text-sm md:text-base font-semibold text-white pr-4">{item.question}</span>
             <svg 
-              className={`w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0 transition-transform duration-300 ${
+              className={`w-4 h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 ${
                 openIndex === index ? 'rotate-180' : ''
               }`} 
               fill="none" 
@@ -32,7 +32,7 @@ export default function FAQ() {
           <div className={`overflow-hidden transition-all duration-300 ${
             openIndex === index ? 'max-h-48' : 'max-h-0'
           }`}>
-            <p className="px-4 pb-3 md:pb-4 text-gray-600 text-xs md:text-sm leading-relaxed">
+            <p className="px-4 pb-3 md:pb-4 text-gray-400 text-xs md:text-sm leading-relaxed">
               {item.answer}
             </p>
           </div>
