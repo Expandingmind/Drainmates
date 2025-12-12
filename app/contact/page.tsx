@@ -5,7 +5,7 @@ import FAQ from '@/components/FAQ'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Drainmates Plumbing',
-  description: 'Get a free plumbing estimate from Drainmates. Contact us for drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing services in Orlando & Central Florida.',
+  description: 'Get a free plumbing estimate from Drainmates. Contact us for drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing services in Miami-Dade & Broward County.',
 }
 
 export default function ContactPage() {
@@ -75,7 +75,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-sm text-gray-500 mb-1">Service Area</p>
-                <p className="font-semibold text-black">{COMPANY_INFO.city}, {COMPANY_INFO.state} & Central Florida</p>
+                <p className="font-semibold text-black">Miami-Dade & Broward County</p>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ export default function ContactPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <p className="text-gray-500">Map placeholder — Serving {COMPANY_INFO.city} & Central Florida</p>
+            <p className="text-gray-500">Map placeholder — Serving Miami-Dade & Broward County</p>
           </div>
         </div>
       </section>

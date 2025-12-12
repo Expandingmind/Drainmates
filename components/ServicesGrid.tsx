@@ -70,7 +70,7 @@ export default function ServicesGrid() {
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             From emergency repairs to routine maintenance, everything your pipes need. 
-            Residential and commercial projects across Central Florida.
+            Residential and commercial projects across South Florida.
           </p>
         </div>
 

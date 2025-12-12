@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="max-w-4xl">
           {/* Eyebrow */}
           <p className="text-gray-400 uppercase tracking-[0.2em] text-sm font-medium mb-6">
-            Professional Plumbing in {COMPANY_INFO.city}, {COMPANY_INFO.state}
+            Professional Plumbing in Miami-Dade & Broward County
           </p>
 
           {/* Main Headline */}

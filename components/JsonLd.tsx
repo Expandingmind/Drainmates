@@ -5,7 +5,7 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Plumber',
     name: COMPANY_INFO.name,
-    description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing in Orlando and Central Florida.',
+    description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing in Miami-Dade and Broward County.',
     url: 'https://drainmates.com',
     telephone: COMPANY_INFO.phone,
     email: COMPANY_INFO.email,
@@ -19,32 +19,27 @@ export default function JsonLd() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '28.5383',
-      longitude: '-81.3792',
+      latitude: '25.7617',
+      longitude: '-80.1918',
     },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '07:00',
-        closes: '20:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '08:00',
-        closes: '18:00',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '00:00',
+        closes: '23:59',
       },
     ],
-    areaServed: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: '28.5383',
-        longitude: '-81.3792',
+    areaServed: [
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Miami-Dade County',
       },
-      geoRadius: '50000',
-    },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Broward County',
+      },
+    ],
     priceRange: '$$',
     paymentAccepted: 'Cash, Credit Card, Check',
     hasOfferCatalog: {

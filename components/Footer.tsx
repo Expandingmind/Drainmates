@@ -20,9 +20,9 @@ export default function Footer() {
                 <span className="text-white">mates</span>
               </span>
             </Link>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Professional plumbing services for homes and businesses across Central Florida since 2017.
-            </p>
+        <p className="text-gray-400 mb-6 leading-relaxed">
+          Professional plumbing services for homes and businesses across Miami-Dade & Broward County.
+        </p>
             <div className="flex gap-3">
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white/10 px-3 py-1.5 rounded-full">
                 <span className="text-primary-500">A+</span> BBB Rated
@@ -89,13 +89,13 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-300">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                {COMPANY_INFO.city}, {COMPANY_INFO.state} & Central Florida
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              Miami-Dade & Broward County
               </li>
             </ul>
           </div>
@@ -113,9 +113,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p>Mon–Fri: {COMPANY_INFO.hours.weekdays}</p>
-                  <p>Sat: {COMPANY_INFO.hours.saturday}</p>
-                  <p>Sun: {COMPANY_INFO.hours.sunday}</p>
+                  <p className="font-semibold text-white text-lg">Open 24/7</p>
+                  <p className="text-gray-400">7 Days a Week</p>
                 </div>
               </li>
               <li className="mt-4 p-4 bg-primary-600/20 rounded-lg border border-primary-600/30">
@@ -123,7 +122,7 @@ export default function Footer() {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                   </svg>
-                  24/7 Emergency Service
+                  Always Available
                 </p>
               </li>
             </ul>

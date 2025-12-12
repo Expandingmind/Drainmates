@@ -10,10 +10,10 @@ export default function ServiceArea() {
             Service Area
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">
-            Proudly Serving {COMPANY_INFO.city} & Surrounding Areas
+            Proudly Serving Miami-Dade & Broward County
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-12">
-            We provide fast, reliable plumbing services throughout Central Florida. 
+            We provide fast, reliable plumbing services throughout South Florida. 
             If you don&apos;t see your area listed, give us a call — we may still be able to help!
           </p>
 

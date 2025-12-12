@@ -4,7 +4,7 @@ import { SERVICES } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Our Services | Drainmates Plumbing',
-  description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, pipe repair, sewer inspection, and 24/7 emergency plumbing in Orlando & Central Florida.',
+  description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, pipe repair, sewer inspection, and 24/7 emergency plumbing in Miami-Dade & Broward County.',
 }
 
 const iconMap: { [key: string]: JSX.Element } = {

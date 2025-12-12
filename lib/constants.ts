@@ -4,13 +4,13 @@ export const COMPANY_INFO = {
   phone: '(786) 803-6594',
   email: 'info@drainmates.com',
   address: '123 Main Street',
-  city: 'Orlando',
+  city: 'Miami',
   state: 'FL',
-  zip: '32801',
+  zip: '33101',
   hours: {
-    weekdays: '7:00 AM – 8:00 PM',
-    saturday: '8:00 AM – 6:00 PM',
-    sunday: '24/7 Emergency Only',
+    weekdays: '24/7',
+    saturday: '24/7',
+    sunday: '24/7',
     emergency: '24/7',
   },
 }
@@ -188,18 +188,22 @@ export const TESTIMONIALS = [
 ]
 
 export const SERVICE_AREAS = [
-  'Orlando',
-  'Winter Park',
-  'Kissimmee',
-  'Sanford',
-  'Altamonte Springs',
-  'Oviedo',
-  'Lake Mary',
-  'Longwood',
-  'Casselberry',
-  'Winter Garden',
-  'Apopka',
-  'Clermont',
+  'Miami',
+  'Miami Beach',
+  'Hialeah',
+  'Coral Gables',
+  'Doral',
+  'Kendall',
+  'Homestead',
+  'Fort Lauderdale',
+  'Hollywood',
+  'Pembroke Pines',
+  'Miramar',
+  'Pompano Beach',
+  'Davie',
+  'Plantation',
+  'Weston',
+  'Sunrise',
 ]
 
 export const FAQ_ITEMS = [
@@ -209,7 +213,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'What areas do you serve?',
-    answer: 'We proudly serve Orlando and the greater Central Florida area, including Winter Park, Kissimmee, Sanford, Altamonte Springs, and surrounding communities.',
+    answer: 'We proudly serve Miami-Dade and Broward County, including Miami, Miami Beach, Fort Lauderdale, Hollywood, Coral Gables, Doral, and surrounding communities.',
   },
   {
     question: 'Do you handle emergency calls?',

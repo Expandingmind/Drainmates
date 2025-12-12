@@ -38,7 +38,7 @@ export default function About() {
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
                 At Drainmates, we believe every home and business deserves fast, honest, and professional plumbing service. 
-                Since 2017, we&apos;ve been serving Central Florida with a simple mission: fix the problem right the first time, 
+                We&apos;ve been serving Miami-Dade and Broward County with a simple mission: fix the problem right the first time, 
                 at a fair price, with zero hassle.
               </p>
               <p>
