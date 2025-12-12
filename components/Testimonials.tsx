@@ -177,17 +177,17 @@ export default function Testimonials() {
   const row2Cards = [...TESTIMONIALS_ROW_2, ...TESTIMONIALS_ROW_2, ...TESTIMONIALS_ROW_2]
 
   return (
-    <section ref={sectionRef} id="reviews" className="py-10 md:py-14 bg-white overflow-hidden">
+    <section ref={sectionRef} id="reviews" className="py-10 md:py-14 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         {/* Section Header */}
         <div className={`flex flex-col md:flex-row md:items-center md:justify-between gap-4 transition-all duration-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
               Why Homeowners Love Drainmates
             </h2>
-            <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
+            <div className="flex items-center gap-2 text-gray-300 text-sm md:text-base">
               <span className="font-semibold">50+ reviews</span>
               <span>with an overall</span>
               <span className="font-semibold">4.9 star ranking</span>
@@ -203,7 +203,7 @@ export default function Testimonials() {
           
           <a 
             href="#" 
-            className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-gray-900 rounded-full text-gray-900 font-semibold text-sm hover:bg-gray-900 hover:text-white transition-colors self-start md:self-auto"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-white rounded-full text-white font-semibold text-sm hover:bg-white hover:text-black transition-colors self-start md:self-auto"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -214,7 +214,7 @@ export default function Testimonials() {
       </div>
 
       {/* Scrolling Reviews Container */}
-      <div className="relative bg-black py-8 md:py-10">
+      <div className="relative py-8 md:py-10">
         {/* Gradient overlays for fade effect */}
         <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
@@ -239,8 +239,8 @@ export default function Testimonials() {
       </div>
 
       {/* Google Verified Badge */}
-      <div className="bg-white py-4 flex justify-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm text-gray-700">
+      <div className="py-4 flex justify-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300">
           <GoogleIcon />
           <span className="font-medium">Google Verified Reviews</span>
         </div>
