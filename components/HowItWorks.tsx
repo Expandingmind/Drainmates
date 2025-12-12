@@ -26,55 +26,53 @@ export default function HowItWorks() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-10 md:py-14 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-12 md:mb-16 transition-all duration-700 ${
+        <div className={`text-center mb-8 md:mb-10 transition-all duration-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <p className="text-gray-500 uppercase tracking-[0.15em] md:tracking-[0.2em] text-xs md:text-sm font-medium mb-3 md:mb-4">
+          <p className="text-gray-500 uppercase tracking-[0.12em] text-[10px] md:text-xs font-medium mb-2">
             How It Works
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2">
             Simple, Stress-Free Service
           </h2>
-          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto px-4">
-            Getting your plumbing fixed shouldn&apos;t be complicated. Here&apos;s how we make it easy.
+          <p className="text-gray-600 text-sm md:text-base max-w-lg mx-auto">
+            Getting your plumbing fixed shouldn&apos;t be complicated.
           </p>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {HOW_IT_WORKS.map((item, index) => (
             <div 
               key={item.step} 
               className={`relative transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
-              style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
+              style={{ transitionDelay: isVisible ? `${index * 100}ms` : '0ms' }}
             >
               {/* Connector Line - Desktop Only */}
               {index < HOW_IT_WORKS.length - 1 && (
-                <div className={`hidden md:block absolute top-12 left-1/2 w-full h-0.5 bg-gray-200 transition-all duration-1000 ${
+                <div className={`hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gray-200 transition-all duration-1000 ${
                   isVisible ? 'scale-x-100' : 'scale-x-0'
-                }`} style={{ transitionDelay: isVisible ? `${(index + 1) * 200}ms` : '0ms', transformOrigin: 'left' }}>
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300"></div>
-                </div>
+                }`} style={{ transitionDelay: isVisible ? `${(index + 1) * 150}ms` : '0ms', transformOrigin: 'left' }}></div>
               )}
               
               <div className="text-center relative z-10 group">
                 {/* Step Number */}
-                <div className={`inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-black text-white text-2xl md:text-3xl font-bold mb-4 md:mb-6 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:bg-primary-600 ${
+                <div className={`inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-black text-white text-xl md:text-2xl font-bold mb-3 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:bg-primary-600 ${
                   isVisible ? 'scale-100' : 'scale-0'
-                }`} style={{ transitionDelay: isVisible ? `${index * 150 + 100}ms` : '0ms' }}>
+                }`} style={{ transitionDelay: isVisible ? `${index * 100 + 50}ms` : '0ms' }}>
                   {item.step}
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-lg md:text-xl font-bold text-black mb-2 md:mb-3 group-hover:text-primary-600 transition-colors">
+                <h3 className="text-sm md:text-base font-bold text-black mb-1.5 group-hover:text-primary-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed max-w-xs mx-auto text-sm md:text-base">
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed max-w-[200px] mx-auto">
                   {item.description}
                 </p>
               </div>

@@ -141,7 +141,7 @@ export const TESTIMONIALS = [
     name: 'Michael R.',
     role: 'HOMEOWNER',
     rating: 5,
-    text: 'Called at 11pm with a burst pipe. Drainmates was there in 30 minutes and had everything fixed by midnight. Incredible service!',
+    quote: 'Called at 11pm with a burst pipe. Drainmates was there in 30 minutes and had everything fixed by midnight. Incredible service!',
     date: 'NOV 2024',
     initial: 'M',
   },
@@ -149,7 +149,7 @@ export const TESTIMONIALS = [
     name: 'Sarah K.',
     role: 'PROPERTY MANAGER',
     rating: 5,
-    text: 'I manage 15 rental properties and Drainmates is my go-to. Always professional, always on time, always fair pricing.',
+    quote: 'I manage 15 rental properties and Drainmates is my go-to. Always professional, always on time, always fair pricing.',
     date: 'OCT 2024',
     initial: 'S',
   },
@@ -157,7 +157,7 @@ export const TESTIMONIALS = [
     name: 'David L.',
     role: 'HOMEOWNER',
     rating: 5,
-    text: 'They found a hidden leak that two other plumbers missed. Saved us thousands in potential water damage. Highly recommend!',
+    quote: 'They found a hidden leak that two other plumbers missed. Saved us thousands in potential water damage. Highly recommend!',
     date: 'OCT 2024',
     initial: 'D',
   },
@@ -165,7 +165,7 @@ export const TESTIMONIALS = [
     name: 'Jennifer M.',
     role: 'BUSINESS OWNER',
     rating: 5,
-    text: 'Our restaurant needed emergency drain cleaning before a health inspection. Drainmates came same-day and saved our business.',
+    quote: 'Our restaurant needed emergency drain cleaning before a health inspection. Drainmates came same-day and saved our business.',
     date: 'SEP 2024',
     initial: 'J',
   },
@@ -173,7 +173,7 @@ export const TESTIMONIALS = [
     name: 'Robert T.',
     role: 'HOMEOWNER',
     rating: 5,
-    text: 'New water heater installed in one day. Clean work, no mess, and they even hauled away the old unit. Great experience!',
+    quote: 'New water heater installed in one day. Clean work, no mess, and they even hauled away the old unit. Great experience!',
     date: 'SEP 2024',
     initial: 'R',
   },
@@ -181,7 +181,7 @@ export const TESTIMONIALS = [
     name: 'Amanda C.',
     role: 'REALTOR',
     rating: 5,
-    text: 'I recommend Drainmates to all my buyers and sellers. They do thorough inspections and their reports are detailed and honest.',
+    quote: 'I recommend Drainmates to all my buyers and sellers. They do thorough inspections and their reports are detailed and honest.',
     date: 'AUG 2024',
     initial: 'A',
   },
@@ -283,4 +283,9 @@ export const HOW_IT_WORKS = [
     description: 'We complete the job efficiently, clean up after ourselves, and ensure you\'re 100% satisfied.',
   },
 ]
+
+export const ABOUT = {
+  paragraph1: 'At Drainmates, we believe every home and business deserves fast, honest, and professional plumbing service. We\'ve been serving Miami-Dade and Broward County with a simple mission: fix the problem right the first time, at a fair price, with zero hassle.',
+  paragraph2: 'Our team of licensed plumbers brings decades of combined experience to every job — from simple drain cleaning to complex pipe repairs. We show up on time, communicate clearly, protect your property, and leave your space cleaner than we found it.',
+}
 

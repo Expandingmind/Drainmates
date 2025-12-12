@@ -3,14 +3,14 @@ import ServicesGrid from '@/components/ServicesGrid'
 import HowItWorks from '@/components/HowItWorks'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import Testimonials from '@/components/Testimonials'
+import About from '@/components/About'
 import ServiceArea from '@/components/ServiceArea'
 import CTAStrip from '@/components/CTAStrip'
-import About from '@/components/About'
 import ContactForm from '@/components/ContactForm'
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <ServicesGrid />
       <HowItWorks />
@@ -20,7 +20,6 @@ export default function Home() {
       <ServiceArea />
       <CTAStrip />
       <ContactForm />
-    </>
+    </main>
   )
 }
-

@@ -1,41 +1,25 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { COMPANY_INFO } from '@/lib/constants'
+import { useState } from 'react'
+import { SERVICES, COMPANY_INFO } from '@/lib/constants'
 
-interface ContactFormProps {
-  fullWidth?: boolean
-}
-
-export default function ContactForm({ fullWidth = false }: ContactFormProps) {
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
     service: '',
-    message: '',
+    message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [submitted, setSubmitted] = useState(false)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -44,195 +28,215 @@ export default function ContactForm({ fullWidth = false }: ContactFormProps) {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    alert('Thank you for your request! We will contact you within 24 hours.')
     setIsSubmitting(false)
+    setSubmitted(true)
     setFormData({ name: '', phone: '', email: '', service: '', message: '' })
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+  if (submitted) {
+    return (
+      <div className="text-center py-6 md:py-8">
+        <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+          <svg className="w-6 h-6 md:w-8 md:h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="text-lg md:text-xl font-bold text-black mb-1 md:mb-2">Request Received!</h3>
+        <p className="text-gray-600 text-sm md:text-base mb-3 md:mb-4">We&apos;ll get back to you within 24 hours.</p>
+        <button 
+          onClick={() => setSubmitted(false)}
+          className="text-primary-600 font-semibold hover:underline text-sm"
+        >
+          Submit another request
+        </button>
+      </div>
+    )
   }
 
-  const serviceOptions = [
-    'Drain Cleaning',
-    'Leak Repair',
-    'Water Heater',
-    'Sewer/Camera Inspection',
-    'Emergency',
-    'Other',
-  ]
-
   return (
-    <section ref={sectionRef} id="contact-form" className={`py-16 md:py-24 bg-black ${fullWidth ? '' : 'scroll-mt-32'} overflow-hidden`}>
+    <div id="contact-form" className="py-8 md:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4">
-            Get Your Free Estimate
-          </h2>
-          <p className="text-gray-400 text-base md:text-lg">
-            We respond within 24 hours
-          </p>
-        </div>
-
-        <div className={`max-w-3xl mx-auto ${fullWidth ? 'lg:max-w-4xl' : ''}`}>
-          <form 
-            onSubmit={handleSubmit} 
-            className={`bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-2xl transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
-              {/* Name */}
-              <div className="group">
-                <label htmlFor="name" className="sr-only">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Name *"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3.5 md:py-4 border-b-2 border-gray-200 focus:border-primary-500 outline-none transition-all text-gray-800 placeholder-gray-400 text-base bg-transparent group-hover:border-gray-300"
-                />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
+          {/* Form Side */}
+          <div>
+            <p className="text-gray-500 uppercase tracking-[0.12em] text-[10px] md:text-xs font-medium mb-2">
+              Get In Touch
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3 md:mb-4">
+              Request a Free Estimate
+            </h2>
+            <p className="text-gray-600 text-sm md:text-base mb-4 md:mb-6">
+              Fill out the form and we&apos;ll get back to you within 24 hours.
+            </p>
+            
+            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                    Phone *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                    placeholder="(555) 123-4567"
+                  />
+                </div>
               </div>
-
-              {/* Phone */}
-              <div className="group">
-                <label htmlFor="phone" className="sr-only">Phone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Phone *"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3.5 md:py-4 border-b-2 border-gray-200 focus:border-primary-500 outline-none transition-all text-gray-800 placeholder-gray-400 text-base bg-transparent group-hover:border-gray-300"
-                />
-              </div>
-
-              {/* Email */}
-              <div className="group">
-                <label htmlFor="email" className="sr-only">Email</label>
+              
+              <div>
+                <label htmlFor="email" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                  Email *
+                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Email *"
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3.5 md:py-4 border-b-2 border-gray-200 focus:border-primary-500 outline-none transition-all text-gray-800 placeholder-gray-400 text-base bg-transparent group-hover:border-gray-300"
+                  className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                  placeholder="you@email.com"
                 />
               </div>
-
-              {/* Service Type */}
-              <div className="group">
-                <label htmlFor="service" className="sr-only">Service Needed</label>
+              
+              <div>
+                <label htmlFor="service" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                  Service Needed *
+                </label>
                 <select
                   id="service"
                   name="service"
                   required
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-4 py-3.5 md:py-4 border-b-2 border-gray-200 focus:border-primary-500 outline-none transition-all text-gray-800 bg-white appearance-none cursor-pointer text-base group-hover:border-gray-300"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'right 0.5rem center',
-                    backgroundSize: '1.5rem',
-                  }}
+                  className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-white"
                 >
-                  <option value="" disabled>Project type *</option>
-                  {serviceOptions.map((service) => (
-                    <option key={service} value={service}>{service}</option>
+                  <option value="">Select a service</option>
+                  {SERVICES.map((service) => (
+                    <option key={service.id} value={service.id}>
+                      {service.title}
+                    </option>
                   ))}
                 </select>
               </div>
-            </div>
-
-            {/* Message */}
-            <div className="mb-6 md:mb-8 group">
-              <label htmlFor="message" className="sr-only">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Brief project description (optional)"
-                rows={3}
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full px-4 py-3.5 md:py-4 border-b-2 border-gray-200 focus:border-primary-500 outline-none transition-all text-gray-800 placeholder-gray-400 resize-none text-base bg-transparent group-hover:border-gray-300"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-black hover:bg-gray-800 disabled:bg-gray-400 text-white py-3.5 md:py-4 px-8 rounded-full font-semibold text-base md:text-lg transition-all flex items-center justify-center gap-2 group hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] disabled:cursor-not-allowed disabled:transform-none"
-            >
-              {isSubmitting ? (
-                <>
-                  <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              
+              <div>
+                <label htmlFor="message" className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={3}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 md:py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all resize-none"
+                  placeholder="Tell us about your plumbing issue..."
+                />
+              </div>
+              
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-6 py-2.5 md:py-3 rounded-full font-semibold text-sm transition-all shadow-lg shadow-primary-600/30 hover:shadow-primary-500/50 disabled:opacity-50 disabled:cursor-not-allowed btn-hover-lift active:scale-[0.98]"
+              >
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Get Free Estimate
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+          
+          {/* Contact Info Side */}
+          <div className="bg-black rounded-xl md:rounded-2xl p-5 md:p-8 text-white">
+            <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Contact Information</h3>
+            
+            <div className="space-y-4 md:space-y-6">
+              <a href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`} className="flex items-start gap-3 md:gap-4 group">
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors">
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Sending...
-                </>
-              ) : (
-                <>
-                  Request Estimate
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-[10px] md:text-xs mb-0.5">Phone</p>
+                  <p className="font-semibold text-sm md:text-base group-hover:text-primary-400 transition-colors">{COMPANY_INFO.phone}</p>
+                </div>
+              </a>
+              
+              <a href={`mailto:${COMPANY_INFO.email}`} className="flex items-start gap-3 md:gap-4 group">
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors">
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                </>
-              )}
-            </button>
-          </form>
-
-          {/* Contact Info */}
-          <div className={`mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 text-center transition-all duration-700 delay-400 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <a
-              href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
-              className="flex flex-col items-center gap-2 md:gap-3 text-gray-400 hover:text-white transition-colors group p-4"
-            >
-              <div className="w-10 md:w-12 h-10 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary-600/30 group-hover:scale-110 transition-all">
-                <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-[10px] md:text-xs mb-0.5">Email</p>
+                  <p className="font-semibold text-sm md:text-base group-hover:text-primary-400 transition-colors">{COMPANY_INFO.email}</p>
+                </div>
+              </a>
+              
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-[10px] md:text-xs mb-0.5">Hours</p>
+                  <p className="font-semibold text-sm md:text-base">24/7 Available</p>
+                </div>
               </div>
-              <span className="text-sm md:text-base">{COMPANY_INFO.phone}</span>
-            </a>
-            <a
-              href={`mailto:${COMPANY_INFO.email}`}
-              className="flex flex-col items-center gap-2 md:gap-3 text-gray-400 hover:text-white transition-colors group p-4"
-            >
-              <div className="w-10 md:w-12 h-10 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary-600/30 group-hover:scale-110 transition-all">
-                <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+              
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-[10px] md:text-xs mb-0.5">Service Area</p>
+                  <p className="font-semibold text-sm md:text-base">Miami-Dade & Broward County</p>
+                </div>
               </div>
-              <span className="text-sm md:text-base">{COMPANY_INFO.email}</span>
-            </a>
-            <div className="flex flex-col items-center gap-2 md:gap-3 text-gray-400 p-4">
-              <div className="w-10 md:w-12 h-10 md:h-12 rounded-full bg-white/10 flex items-center justify-center">
-                <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <span className="text-sm md:text-base">24/7 Available</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
