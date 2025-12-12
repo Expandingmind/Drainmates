@@ -1,6 +1,19 @@
 import Link from 'next/link'
 import { SERVICES } from '@/lib/constants'
 
+const serviceImages: { [key: string]: string } = {
+  'drain-cleaning': 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&h=600&fit=crop',
+  'hydro-jetting': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop',
+  'clog-removal': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop',
+  'leak-detection': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
+  'pipe-repair': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop',
+  'water-heater': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=600&fit=crop',
+  'sewer-camera': 'https://images.unsplash.com/photo-1558618047-f4b511aad0a2?w=800&h=600&fit=crop',
+  'emergency': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop',
+  'garbage-disposal': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop',
+  'faucet-fixture': 'https://images.unsplash.com/photo-1585351650024-2a347b0d7ad5?w=800&h=600&fit=crop',
+}
+
 const iconMap: { [key: string]: JSX.Element } = {
   drain: (
     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,30 +99,53 @@ export default function ServicesPage() {
               <div 
                 key={service.id}
                 id={service.id}
-                className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl md:rounded-2xl p-5 md:p-6 border border-white/10 hover:border-primary-500/30 hover:shadow-lg transition-all duration-300"
+                className="group bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl md:rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white/10 flex items-center justify-center text-white flex-shrink-0 group-hover:bg-primary-600 transition-colors">
+                {/* Image Section */}
+                <div className="relative h-40 md:h-48 overflow-hidden">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                    style={{ backgroundImage: `url(${serviceImages[service.id] || ''})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
+                  
+                  {/* Icon Badge */}
+                  <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-black/50 backdrop-blur-sm flex items-center justify-center text-white border border-white/20 group-hover:bg-primary-600/80 transition-colors">
                     {iconMap[service.icon] || iconMap.drain}
                   </div>
-                  <div className="flex-1">
-                    <h2 className="text-base md:text-lg font-bold text-white mb-1.5 group-hover:text-primary-400 transition-colors">
+                  
+                  {/* Title overlay on image */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-primary-400 transition-colors">
                       {service.title}
                     </h2>
-                    <p className="text-gray-400 text-xs md:text-sm mb-3">
-                      {service.shortDesc}
-                    </p>
-                    <ul className="space-y-1.5">
-                      {service.details.map((detail, index) => (
-                        <li key={index} className="flex items-start gap-2 text-xs md:text-sm text-gray-300">
-                          <svg className="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
+                </div>
+                
+                {/* Content Section */}
+                <div className="p-5 md:p-6">
+                  <p className="text-gray-400 text-sm md:text-base mb-4">
+                    {service.shortDesc}
+                  </p>
+                  <ul className="space-y-2 mb-5">
+                    {service.details.map((detail, index) => (
+                      <li key={index} className="flex items-start gap-2.5 text-sm text-gray-300">
+                        <svg className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-primary-600/20 btn-hover-lift"
+                  >
+                    Get Free Estimate
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             ))}
