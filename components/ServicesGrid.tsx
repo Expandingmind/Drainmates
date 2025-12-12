@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { SERVICES } from '@/lib/constants'
 
@@ -57,54 +60,82 @@ const iconMap: { [key: string]: JSX.Element } = {
 }
 
 export default function ServicesGrid() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="py-24 bg-black text-white">
+    <section ref={sectionRef} className="py-16 md:py-24 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-gray-400 uppercase tracking-[0.2em] text-sm font-medium mb-4">
+        <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <p className="text-gray-400 uppercase tracking-[0.15em] md:tracking-[0.2em] text-xs md:text-sm font-medium mb-3 md:mb-4">
             What We Do
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
             Plumbing Services
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4">
             From emergency repairs to routine maintenance, everything your pipes need. 
             Residential and commercial projects across South Florida.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {SERVICES.map((service, index) => (
             <Link
               key={service.id}
               href={`/services#${service.id}`}
-              className="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/50 transition-all duration-300 card-hover"
+              className={`group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl md:rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/50 transition-all duration-500 card-hover ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: isVisible ? `${index * 50}ms` : '0ms' }}
             >
               {/* Background Image Placeholder */}
               <div className="aspect-[4/3] bg-gray-800 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent z-10"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">
+                <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all duration-500">
                   {iconMap[service.icon] || iconMap.drain}
                 </div>
                 {/* Icon Badge */}
-                <div className="absolute top-4 left-4 z-20 w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white border border-white/20">
-                  {iconMap[service.icon] || iconMap.drain}
+                <div className="absolute top-3 md:top-4 left-3 md:left-4 z-20 w-10 md:w-12 h-10 md:h-12 rounded-lg md:rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white border border-white/20 group-hover:bg-primary-600/20 group-hover:border-primary-500/50 transition-all duration-300">
+                  <div className="group-hover:scale-110 transition-transform duration-300">
+                    {iconMap[service.icon] || iconMap.drain}
+                  </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors">
+              <div className="p-4 md:p-6">
+                <h3 className="text-base md:text-lg font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-gray-400 text-sm leading-relaxed mb-3 md:mb-4 line-clamp-2">
                   {service.shortDesc}
                 </p>
                 <span className="inline-flex items-center gap-1 text-sm font-medium text-primary-400 group-hover:text-primary-300 transition-colors">
                   Learn more
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
@@ -116,4 +147,3 @@ export default function ServicesGrid() {
     </section>
   )
 }
-
