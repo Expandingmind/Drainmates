@@ -4,6 +4,19 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { SERVICES } from '@/lib/constants'
 
+const serviceImages: { [key: string]: string } = {
+  'drain-cleaning': 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400&h=300&fit=crop',
+  'hydro-jetting': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop',
+  'clog-removal': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop',
+  'leak-detection': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+  'pipe-repair': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=300&fit=crop',
+  'water-heater': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&h=300&fit=crop',
+  'sewer-camera': 'https://images.unsplash.com/photo-1558618047-f4b511aad0a2?w=400&h=300&fit=crop',
+  'emergency': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop',
+  'garbage-disposal': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop',
+  'faucet-fixture': 'https://images.unsplash.com/photo-1585351650024-2a347b0d7ad5?w=400&h=300&fit=crop',
+}
+
 const iconMap: { [key: string]: JSX.Element } = {
   drain: (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -109,16 +122,26 @@ export default function ServicesGrid() {
               }`}
               style={{ transitionDelay: isVisible ? `${index * 30}ms` : '0ms' }}
             >
-              {/* Content */}
-              <div className="p-3 md:p-4">
-                {/* Icon */}
-                <div className="w-8 md:w-10 h-8 md:h-10 rounded-lg bg-white/10 flex items-center justify-center text-white mb-2 md:mb-3 group-hover:bg-primary-600/20 group-hover:scale-110 transition-all duration-300">
+              {/* Image */}
+              <div className="relative h-24 md:h-32 overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                  style={{ backgroundImage: `url(${serviceImages[service.id] || ''})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
+                
+                {/* Icon overlay */}
+                <div className="absolute top-2 left-2 w-8 h-8 md:w-9 md:h-9 rounded-lg bg-black/50 backdrop-blur-sm flex items-center justify-center text-white border border-white/20">
                   {iconMap[service.icon] || iconMap.drain}
                 </div>
+              </div>
+              
+              {/* Content */}
+              <div className="p-3 md:p-4">
                 <h3 className="text-xs md:text-sm font-semibold text-white mb-1 group-hover:text-primary-400 transition-colors duration-300 line-clamp-1">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 text-[10px] md:text-xs leading-relaxed line-clamp-2 hidden sm:block">
+                <p className="text-gray-400 text-[10px] md:text-xs leading-relaxed line-clamp-2">
                   {service.shortDesc}
                 </p>
               </div>
