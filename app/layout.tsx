@@ -49,10 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen bg-white text-black antialiased">
+      <body className="min-h-screen bg-black text-white antialiased">
         <JsonLd />
         <Header />
-        <main className="pt-[calc(40px+72px)]">
+        <main>
           {children}
         </main>
         <Footer />
