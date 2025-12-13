@@ -70,7 +70,7 @@ const iconMap: { [key: string]: JSX.Element } = {
 
 export const metadata = {
   title: 'Services | Drainmates Plumbing',
-  description: 'Professional plumbing services in Miami-Dade & Broward County. Drain cleaning, leak repair, water heater installation, and 24/7 emergency service.',
+  description: 'Professional plumbing services in Miami-Dade, Broward & Palm Beach County. Drain cleaning, leak repair, water heater installation, and 24/7 emergency service.',
 }
 
 export default function ServicesPage() {

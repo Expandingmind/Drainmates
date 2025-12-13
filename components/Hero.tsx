@@ -38,7 +38,7 @@ export default function Hero() {
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Professional Plumbing in Miami-Dade & Broward County
+            Professional Plumbing in Miami-Dade, Broward & Palm Beach
           </p>
 
           {/* Main Headline */}

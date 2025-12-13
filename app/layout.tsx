@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Drainmates | Professional Plumbing Services',
-  description: 'Fast, reliable plumbing services in Miami-Dade & Broward County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters. Licensed & insured. Free estimates!',
+  description: 'Fast, reliable plumbing services in Miami-Dade, Broward & Palm Beach County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters. Licensed & insured. Free estimates!',
   keywords: 'plumber, plumbing, drain cleaning, emergency plumber, water heater, leak repair, Miami plumber, Fort Lauderdale plumber, South Florida plumbing',
   authors: [{ name: 'Drainmates' }],
   creator: 'Drainmates',
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     url: 'https://drainmates.com',
     siteName: 'Drainmates',
     title: 'Drainmates | Professional Plumbing Services',
-    description: 'Fast, reliable plumbing services in Miami-Dade & Broward County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters.',
+    description: 'Fast, reliable plumbing services in Miami-Dade, Broward & Palm Beach County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Drainmates | Professional Plumbing Services',
-    description: 'Fast, reliable plumbing services in Miami-Dade & Broward County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters.',
+    description: 'Fast, reliable plumbing services in Miami-Dade, Broward & Palm Beach County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters.',
   },
   robots: {
     index: true,

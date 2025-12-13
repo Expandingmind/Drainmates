@@ -188,6 +188,7 @@ export const TESTIMONIALS = [
 ]
 
 export const SERVICE_AREAS = [
+  // Miami-Dade
   'Miami',
   'Miami Beach',
   'Hialeah',
@@ -195,6 +196,7 @@ export const SERVICE_AREAS = [
   'Doral',
   'Kendall',
   'Homestead',
+  // Broward
   'Fort Lauderdale',
   'Hollywood',
   'Pembroke Pines',
@@ -204,6 +206,13 @@ export const SERVICE_AREAS = [
   'Plantation',
   'Weston',
   'Sunrise',
+  // Palm Beach
+  'West Palm Beach',
+  'Boca Raton',
+  'Boynton Beach',
+  'Delray Beach',
+  'Palm Beach Gardens',
+  'Jupiter',
 ]
 
 export const FAQ_ITEMS = [
@@ -213,7 +222,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'What areas do you serve?',
-    answer: 'We proudly serve Miami-Dade and Broward County, including Miami, Miami Beach, Fort Lauderdale, Hollywood, Coral Gables, Doral, and surrounding communities.',
+    answer: 'We proudly serve Miami-Dade, Broward, and Palm Beach County, including Miami, Fort Lauderdale, West Palm Beach, Boca Raton, and surrounding communities.',
   },
   {
     question: 'Do you handle emergency calls?',
@@ -285,7 +294,7 @@ export const HOW_IT_WORKS = [
 ]
 
 export const ABOUT = {
-  paragraph1: 'At Drainmates, we believe every home and business deserves fast, honest, and professional plumbing service. We\'ve been serving Miami-Dade and Broward County with a simple mission: fix the problem right the first time, at a fair price, with zero hassle.',
+  paragraph1: 'At Drainmates, we believe every home and business deserves fast, honest, and professional plumbing service. We\'ve been serving Miami-Dade, Broward, and Palm Beach County with a simple mission: fix the problem right the first time, at a fair price, with zero hassle.',
   paragraph2: 'Our team of licensed plumbers brings decades of combined experience to every job — from simple drain cleaning to complex pipe repairs. We show up on time, communicate clearly, protect your property, and leave your space cleaner than we found it.',
 }
 

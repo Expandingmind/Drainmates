@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4 max-w-xs">
-              Professional plumbing services for homes and businesses in Miami-Dade & Broward County.
+              Professional plumbing services for homes and businesses in Miami-Dade, Broward & Palm Beach.
             </p>
             <div className="flex items-center gap-2 text-[10px] md:text-xs text-gray-400">
               <svg className="w-3.5 h-3.5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
@@ -95,7 +95,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-6 md:mt-8 pt-4 md:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-gray-500 text-[10px] md:text-xs">
           <p>&copy; {new Date().getFullYear()} Drainmates. All rights reserved.</p>
-          <p>Serving Miami-Dade & Broward County</p>
+          <p>Serving Miami-Dade, Broward & Palm Beach</p>
         </div>
       </div>
     </footer>

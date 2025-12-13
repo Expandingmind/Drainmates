@@ -3,7 +3,7 @@ import FAQ from '@/components/FAQ'
 
 export const metadata = {
   title: 'Contact | Drainmates Plumbing',
-  description: 'Get in touch with Drainmates for plumbing services in Miami-Dade & Broward County. Request a free estimate or call us for 24/7 emergency service.',
+  description: 'Get in touch with Drainmates for plumbing services in Miami-Dade, Broward & Palm Beach County. Request a free estimate or call us for 24/7 emergency service.',
 }
 
 export default function ContactPage() {

@@ -5,7 +5,7 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Plumber',
     name: COMPANY_INFO.name,
-    description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing in Miami-Dade and Broward County.',
+    description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing in Miami-Dade, Broward, and Palm Beach County.',
     url: 'https://drainmates.com',
     telephone: COMPANY_INFO.phone,
     email: COMPANY_INFO.email,
