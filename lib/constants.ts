@@ -207,6 +207,7 @@ export const SERVICE_AREAS = [
   'Weston',
   'Sunrise',
   // Palm Beach
+  'Palm Beach',
   'West Palm Beach',
   'Boca Raton',
   'Boynton Beach',
