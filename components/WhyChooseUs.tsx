@@ -52,42 +52,42 @@ export default function WhyChooseUs() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-black">
+    <section ref={sectionRef} className="py-10 md:py-16 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-12 md:mb-16 transition-all duration-700 ${
+        <div className={`text-center mb-6 md:mb-10 transition-all duration-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
             Why <span className="text-primary-500">Drainmates</span>
           </h2>
-          <p className="text-gray-500 text-base md:text-lg max-w-md mx-auto">
+          <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
             Professional plumbing with integrity.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className={`group bg-black p-8 md:p-10 hover:bg-white/[0.02] transition-all duration-300 ${
+              className={`group bg-black p-4 sm:p-6 md:p-8 hover:bg-white/[0.02] transition-all duration-300 ${
                 isVisible ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ transitionDelay: isVisible ? `${index * 50}ms` : '0ms' }}
             >
               {/* Number */}
-              <div className="text-primary-500/20 text-5xl md:text-6xl font-bold mb-4 group-hover:text-primary-500/40 transition-colors">
+              <div className="text-primary-500/20 text-3xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-3 group-hover:text-primary-500/40 transition-colors">
                 {String(index + 1).padStart(2, '0')}
               </div>
               
               {/* Title */}
-              <h3 className="text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-1 group-hover:text-primary-400 transition-colors">
                 {feature.title}
               </h3>
               
               {/* Description */}
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-xs sm:text-sm leading-relaxed hidden sm:block">
                 {feature.description}
               </p>
             </div>
