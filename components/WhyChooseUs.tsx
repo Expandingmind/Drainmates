@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
               style={{ transitionDelay: isVisible ? `${index * 50}ms` : '0ms' }}
             >
               {/* Number */}
-              <div className="text-primary-500/20 text-3xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-3 group-hover:text-primary-500/40 transition-colors">
+              <div className="text-primary-500/50 text-3xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-3 group-hover:text-primary-500 transition-colors">
                 {String(index + 1).padStart(2, '0')}
               </div>
               
