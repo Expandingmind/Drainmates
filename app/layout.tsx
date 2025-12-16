@@ -30,11 +30,20 @@ export const metadata: Metadata = {
     siteName: 'Drainmates',
     title: 'Drainmates | Professional Plumbing Services',
     description: 'Fast, reliable plumbing services in Miami-Dade, Broward & Palm Beach County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters.',
+    images: [
+      {
+        url: 'https://drainmates.com/images/plumber-hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'Drainmates Professional Plumber',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Drainmates | Professional Plumbing Services',
     description: 'Fast, reliable plumbing services in Miami-Dade, Broward & Palm Beach County. 24/7 emergency plumbing, drain cleaning, leak repair, water heaters.',
+    images: ['https://drainmates.com/images/plumber-hero.png'],
   },
   robots: {
     index: true,

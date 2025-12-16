@@ -37,7 +37,7 @@ export default function About() {
             {/* Image with Stats Overlay */}
             <div className="relative aspect-[16/9] md:aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden border border-white/10">
               <Image
-                src="https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=2069&auto=format&fit=crop"
+                src="/images/plumber-hero.png"
                 alt="Professional plumber at work"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
