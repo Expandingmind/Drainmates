@@ -6,7 +6,7 @@ const serviceImages: { [key: string]: string } = {
   'hydro-jetting': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop',
   'clog-removal': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop',
   'leak-detection': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
-  'pipe-repair': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop',
+  'pipe-repair': 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop',
   'water-heater': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=600&fit=crop',
   'sewer-camera': 'https://images.unsplash.com/photo-1558618047-f4b511aad0a2?w=800&h=600&fit=crop',
   'emergency': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop',
