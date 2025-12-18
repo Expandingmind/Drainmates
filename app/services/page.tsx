@@ -3,14 +3,14 @@ import { SERVICES } from '@/lib/constants'
 
 const serviceImages: { [key: string]: string } = {
   'drain-cleaning': 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&h=600&fit=crop',
-  'hydro-jetting': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop',
+  'hydro-jetting': '/images/hydro-jetting.jpeg',
   'clog-removal': 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop',
-  'leak-detection': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
-  'pipe-repair': 'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&h=600&fit=crop',
+  'leak-detection': '/images/leak-detection.jpeg',
+  'pipe-repair': '/images/pipe-repair.jpeg',
   'water-heater': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=600&fit=crop',
-  'sewer-camera': 'https://images.unsplash.com/photo-1558618047-f4b511aad0a2?w=800&h=600&fit=crop',
+  'sewer-camera': '/images/sewer-camera.jpeg',
   'emergency': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop',
-  'garbage-disposal': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop',
+  'garbage-disposal': '/images/garbage-disposal.jpeg',
   'faucet-fixture': 'https://images.unsplash.com/photo-1585351650024-2a347b0d7ad5?w=800&h=600&fit=crop',
 }
 
