@@ -5,7 +5,7 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Plumber',
     name: COMPANY_INFO.name,
-    description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing in Miami-Dade, Broward, and Palm Beach County.',
+    description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing in Miami-Dade, Broward, Palm Beach, Orange, Seminole, and Osceola County.',
     url: 'https://drainmates.com',
     telephone: COMPANY_INFO.phone,
     email: COMPANY_INFO.email,
@@ -38,6 +38,22 @@ export default function JsonLd() {
       {
         '@type': 'AdministrativeArea',
         name: 'Broward County',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Palm Beach County',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Orange County',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Seminole County',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Osceola County',
       },
     ],
     priceRange: '$$',

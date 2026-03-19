@@ -6,7 +6,6 @@ import Testimonials from '@/components/Testimonials'
 import About from '@/components/About'
 import ServiceArea from '@/components/ServiceArea'
 import CTAStrip from '@/components/CTAStrip'
-import ContactForm from '@/components/ContactForm'
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
       <About />
       <ServiceArea />
       <CTAStrip />
-      <ContactForm />
     </main>
   )
 }

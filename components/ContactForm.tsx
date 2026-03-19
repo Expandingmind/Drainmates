@@ -231,7 +231,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-[10px]">Service Area</p>
-                  <p className="font-semibold text-sm">Miami-Dade, Broward & Palm Beach</p>
+                  <p className="font-semibold text-sm">Miami-Dade, Broward, Palm Beach & Central Florida</p>
                 </div>
               </div>
             </div>

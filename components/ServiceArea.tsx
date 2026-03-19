@@ -36,10 +36,10 @@ export default function ServiceArea() {
             Service Area
           </p>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
-            Serving Miami-Dade, Broward & Palm Beach
+            Serving Miami-Dade, Broward, Palm Beach & Central Florida
           </h2>
           <p className="text-gray-400 text-xs md:text-sm">
-            Fast, reliable plumbing services throughout South Florida.
+            Fast, reliable plumbing services throughout South & Central Florida.
           </p>
         </div>
 
