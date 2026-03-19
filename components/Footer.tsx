@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { COMPANY_INFO, NAV_LINKS, SERVICE_AREAS } from '@/lib/constants'
 
 export default function Footer() {
@@ -9,12 +10,15 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3 md:mb-4 group">
-              <div className="w-7 h-7 bg-primary-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-xs">D</span>
+              <div className="relative h-7 w-auto group-hover:scale-105 transition-transform">
+                <Image
+                  src="/images/updatedlogo.png"
+                  alt="Drainmates Plumbing & Drain Cleaning"
+                  className="h-full w-auto object-contain"
+                  width={160}
+                  height={32}
+                />
               </div>
-              <span className="text-white font-bold text-base tracking-tight">
-                DRAINMATES
-              </span>
             </Link>
             <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4 max-w-xs">
               Professional plumbing services for homes and businesses in Miami-Dade, Broward, Palm Beach & Central Florida.

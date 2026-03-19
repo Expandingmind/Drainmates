@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { COMPANY_INFO, NAV_LINKS } from '@/lib/constants'
 
 export default function Header() {
@@ -46,12 +47,16 @@ export default function Header() {
           <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-7 h-7 md:w-8 md:h-8 bg-primary-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-xs md:text-sm">D</span>
+              <div className="relative h-7 md:h-8 w-auto group-hover:scale-105 transition-transform">
+                <Image
+                  src="/images/updatedlogo.png"
+                  alt="Drainmates Plumbing & Drain Cleaning"
+                  className="h-full w-auto object-contain"
+                  width={160}
+                  height={32}
+                  priority
+                />
               </div>
-              <span className="text-white font-bold text-base md:text-lg tracking-tight">
-                DRAINMATES
-              </span>
             </Link>
 
             {/* Desktop Navigation */}
