@@ -47,13 +47,13 @@ export default function Header() {
           <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative h-20 md:h-24 w-auto group-hover:scale-105 transition-transform">
+              <div className="relative h-[5.5rem] md:h-[6.6rem] w-auto group-hover:scale-105 transition-transform">
                 <Image
                   src="/images/updatedlogo.png"
                   alt="Drainmates Plumbing & Drain Cleaning"
                   className="h-full w-auto object-contain"
-                  width={440}
-                  height={120}
+                  width={484}
+                  height={132}
                   priority
                 />
               </div>
