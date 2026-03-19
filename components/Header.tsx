@@ -40,20 +40,20 @@ export default function Header() {
       {/* Main Header */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/95 backdrop-blur-md shadow-sm border-b border-white/10' 
-          : 'bg-black'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200' 
+          : 'bg-white'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative h-7 md:h-8 w-auto group-hover:scale-105 transition-transform">
+              <div className="relative h-10 md:h-12 w-auto group-hover:scale-105 transition-transform">
                 <Image
                   src="/images/updatedlogo.png"
                   alt="Drainmates Plumbing & Drain Cleaning"
                   className="h-full w-auto object-contain"
-                  width={160}
-                  height={32}
+                  width={220}
+                  height={60}
                   priority
                 />
               </div>
@@ -65,7 +65,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-primary-500 font-medium text-sm transition-colors relative group"
+                  className="text-gray-800 hover:text-primary-600 font-medium text-sm transition-colors relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></span>
@@ -77,7 +77,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
-                className="inline-flex items-center gap-2 text-gray-300 hover:text-primary-500 font-medium text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-gray-800 hover:text-primary-600 font-medium text-sm transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -86,7 +86,7 @@ export default function Header() {
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-4 py-2 rounded-full font-semibold text-sm transition-all shadow-md shadow-primary-600/20 hover:shadow-primary-500/30 btn-hover-lift"
+                className="inline-flex items-center gap-2 bg-black hover:bg-gray-900 text-white px-4 py-2 rounded-full font-semibold text-sm transition-all shadow-md shadow-black/20 hover:shadow-black/30 btn-hover-lift"
               >
                 Get Free Estimate
               </Link>
@@ -95,7 +95,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 -mr-2 text-white"
+              className="lg:hidden p-2 -mr-2 text-gray-900"
               aria-label="Toggle menu"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -141,7 +141,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2.5 rounded-full font-semibold text-base shadow-lg shadow-primary-600/20"
+                className="flex items-center justify-center gap-2 bg-black text-white px-4 py-2.5 rounded-full font-semibold text-base shadow-lg shadow-black/20"
               >
                 Get Free Estimate
               </Link>
