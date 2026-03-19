@@ -12,7 +12,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative bg-black text-white min-h-[85svh] md:min-h-[80svh] flex items-center overflow-hidden">
+    <section className="relative bg-black text-white min-h-[75svh] md:min-h-[80svh] flex items-center overflow-hidden">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div 
@@ -30,7 +30,7 @@ export default function Hero() {
       {/* Animated Red Accent Glow */}
       <div className="absolute top-1/2 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary-600/20 rounded-full blur-[100px] md:blur-[120px] -translate-y-1/2 translate-x-1/2 animate-pulse-slow"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-12">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <p 
