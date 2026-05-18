@@ -1,7 +1,8 @@
 export const COMPANY_INFO = {
   name: 'Drainmates',
   tagline: 'Fast, Reliable Plumbing — Done Right the First Time.',
-  phone: '(407)305-5451',
+  phones: ['786-803-6594', '786-370-9666'],
+  phone: '786-803-6594',
   email: 'info@drainmates.com',
   address: '123 Main Street',
   city: 'Miami',

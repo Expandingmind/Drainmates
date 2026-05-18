@@ -7,7 +7,7 @@ export default function JsonLd() {
     name: COMPANY_INFO.name,
     description: 'Professional plumbing services including drain cleaning, leak repair, water heater installation, and 24/7 emergency plumbing in Miami-Dade, Broward, Palm Beach, Orange, Seminole, and Osceola County.',
     url: 'https://drainmates.com',
-    telephone: COMPANY_INFO.phone,
+    telephone: COMPANY_INFO.phones,
     email: COMPANY_INFO.email,
     address: {
       '@type': 'PostalAddress',

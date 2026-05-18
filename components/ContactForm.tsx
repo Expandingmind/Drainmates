@@ -186,17 +186,19 @@ export default function ContactForm() {
             <h3 className="text-base font-bold mb-3">Contact Info</h3>
             
             <div className="space-y-3">
-              <a href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-3 group">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-gray-400 text-[10px]">Phone</p>
-                  <p className="font-semibold text-sm group-hover:text-primary-400 transition-colors">{COMPANY_INFO.phone}</p>
-                </div>
-              </a>
+              {COMPANY_INFO.phones.map((phone, index) => (
+                <a key={phone} href={`tel:${phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-3 group">
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    {index === 0 && <p className="text-gray-400 text-[10px]">Phone</p>}
+                    <p className="font-semibold text-sm group-hover:text-primary-400 transition-colors">{phone}</p>
+                  </div>
+                </a>
+              ))}
               
               <a href={`mailto:${COMPANY_INFO.email}`} className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600 transition-colors">
